@@ -1,0 +1,75 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Imformal refs
+email1: omnyx2@gmail.com
+email2: hopsprings2ternal@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Imformal django references translation to korean, this project
+  starts from Gangju, South, Korea. GIST college. 
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://omnyx2.github.com" # the base hostname & protocol for your site0
+twitter_username: jekyllrb
+github_username:  jekyll
+
+# Build settings
+markdown: kramdown
+
+include:
+  - _pages
+
+collections:
+  studypage:
+    output: true
+    permalink: /study/:path/
+  programming:
+    output: true
+    permalink: /:collection/:path/
+  math:
+    output: true
+    permalink: /:collection/:path/
+  projects:
+    output: true
+    permalink: /:collection/:path/
+  references:
+    output: true
+    permalink: /:collection/:path/
+
+
+#comments
+disqus: imformal-refs
+
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post_relate 
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: page
+      read_time: true
+  #references
+  - scope:
+      path: "_refspage"
+      type: refspage
+    values:
+      layout: post_relate 
+      read_time: true
+      comments: true

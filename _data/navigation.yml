@@ -1,0 +1,9 @@
+main:
+  - name: about
+    link: /about
+  - name: authors
+    link: /authors
+  - name: "documents"
+    link: /documents
+  - name: "Search"
+    link: /search/

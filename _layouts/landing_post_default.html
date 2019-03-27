@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+    {% include masterheader.html%}
+    {% include header.html %}
+    <!-- this is part where I fixed -->
+    <div class="temp-content">
+        <section class="b1">
+          <div class="in1">
+            <div class="landing-title">
+                <h1 class="post-title" itemprop="name headline">{{ page.small-title }}</h1>
+                <p class="post-meta">
+                  <time
+                    datetime="{{ page.date | date_to_xmlschema }}"
+                    itemprop="datePublished"
+                    >{{ page.date | date: "%b %-d, %Y" }}</time
+                  >{% if page.author %} •
+                  <span itemprop="author" itemscope itemtype="http://schema.org/Person"
+                    ><span itemprop="name">{{ page.author }}</span></span
+                  >{% endif %}
+                </p>
+              <a class="button101" href="#">
+                GET STARTED
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- this is part where I fixed -->
+    <div class="page-content">
+      <div class="post-content-outer">
+        {{ content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+    <script id="dsq-count-scr" src="//{{ site.disqus }}.disqus.com/count.js" async></script>
+  </body>
+
+</html>

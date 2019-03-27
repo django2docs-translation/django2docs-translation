@@ -1,0 +1,147 @@
+/**
+ * Site header
+ */
+.site-header {
+    text-align: center;
+    border-bottom: 1px solid $grey-color-light;
+    min-height: 56px;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+
+    // Positioning context for the mobile navigation icon
+    // position: relative;
+}
+.site-master-header {
+    
+    border-top: 5px solid $grey-color-dark;
+    border-bottom: 1px solid $grey-color-light;
+    min-height: 56px;
+    // Positioning context for the mobile navigation icon
+    position: relative;
+    width: 100%;
+    z-index: 50;
+    background-color: #0D4B33;
+}
+
+.site-title {
+    font-family: Alexana Neue;
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 56px;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    float: left;
+    &,
+    &:visited {
+        color: $white-color;
+    }
+    a:visited {
+        color: $white-color;
+    }
+}
+
+.site-master-title{
+    width: 94%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+  }
+  
+  #master-header-icon{
+    margin: auto 0;
+    color: $white-color;
+    font-size: 30px;
+  }
+  
+  .langbox{
+    display: flex;
+    flex-direction: row;
+    margin: auto 0;
+  }
+  
+  .lang{
+    margin: 0px 5px;
+        color: $white-color;
+  }
+
+
+
+.site-nav {
+
+    line-height: 56px;
+    z-index: 55;
+    .menu-icon {
+        display: none;
+    }
+    
+    .trigger {
+        .page-link {
+            color: $text-color;
+            line-height: $base-line-height;
+            transition: 0.3s;
+            // Gaps between nav items, but not on the last one
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
+            
+        .page-link:hover {
+            transition: 0.3s;
+            color: gray;
+        }
+    }
+
+    
+
+    @include media-query($on-palm) {
+        position: absolute;
+        top: 9px;
+        right: $spacing-unit / 2;
+        background-color: $background-color;
+        border: 1px solid $grey-color-light;
+        border-radius: 5px;
+        text-align: right;
+
+        .menu-icon {
+            display: block;
+            float: right;
+            width: 36px;
+            height: 26px;
+            line-height: 0;
+            padding-top: 10px;
+            text-align: center;
+
+            > svg {
+                width: 18px;
+                height: 15px;
+
+                path {
+                    fill: $grey-color-dark;
+                }
+            }
+        }
+
+        .trigger {
+            clear: both;
+            display: none;
+        }
+
+        &:hover .trigger {
+            display: block;
+            padding-bottom: 5px;
+        }
+
+        .page-link {
+            display: block;
+            padding: 5px 10px;
+
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+            margin-left: 20px;
+        }
+    }
+}
+
+
+

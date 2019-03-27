@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Default</title>
+  <meta name="description" content="Window object and BOM">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/2014/01/01/default.html">
+  <link rel="alternate" type="application/rss+xml" title="Imformal refs" href="http://localhost:4000/feed.xml">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400&amp;subset=korean" rel="stylesheet">
+</head>
+
+
+  <body>
+    <header class="site-master-header">
+    <div class="site-master-title">
+        <i class="fab fa-python" id="master-header-icon"></i>
+        <a class="site-title" href="/">Imformal refs</a>
+        <div class="langbox">       
+   
+            
+        </div>
+
+    </div>
+</header>
+      
+    <header class="site-header" id="becomesticky">
+    <script>
+
+
+        document.onscroll = function() {becomingsticky()};
+
+        var navbar = document.getElementById("becomesticky");
+        var navbarsticky = navbar.offsetTop;
+
+        function becomingsticky() {
+          if (window.pageYOffset >= navbarsticky) {
+            navbar.classList.add("sticky");
+          }else{
+            navbar.classList.remove("sticky");
+          }
+        }
+    </script>
+
+  <div class="wrapper">
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about">about</a>
+          
+        
+          
+          <a class="page-link" href="/authors">authors</a>
+          
+        
+          
+          <a class="page-link" href="/documents">documents</a>
+          
+        
+          
+          <a class="page-link" href="/search/">Search</a>
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+    <div class="page-content">
+      <div class="post-content-outer">
+        <div class="sidebar-toc">
+  
+  <!-- you can change true to page.toc -->
+  <button onclick="OpenSidebar()" id="OpenSidebarButton">Open</button>
+  <aside
+    class="sidebar__right "
+    style="display: block"
+    id="sidebar__right"
+  >
+    <nav class="toc">
+      <header>
+        <h4 class="nav__title">
+          <i class="fas fa-file-alt"> </i>
+          table of content
+        </h4>
+      </header>
+      <ul class="toc__menu">
+  <li><a href="#window-object-and-bom">Window object and BOM</a>
+    <ul>
+      <li><a href="#window">Window</a></li>
+      <li><a href="#domdocument-object-model">DOM(Document Object Model)</a>
+        <ul>
+          <li><a href="#on-scroll-event">on scroll Event</a></li>
+          <li><a href="#html-dom-getelementbyid">HTML DOM getElementById()</a></li>
+          <li><a href="#nodename">nodeName</a></li>
+          <li><a href="#docuemntelement-property">docuemntElement Property</a></li>
+          <li><a href="#innerhtml-property">innerHTML Property</a></li>
+        </ul>
+      </li>
+      <li><a href="#bombrowser-object-model">BOM(Browser Object Model)</a></li>
+    </ul>
+  </li>
+</ul>
+    </nav>
+  </aside>
+  
+</div>
+<div class="post-article" id="inner">
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">7</h1>
+      <p class="post-meta">
+        <time
+          datetime="2014-01-01T00:00:00+09:00"
+          itemprop="datePublished"
+          >Jan 1, 2014</time
+        >
+      </p>
+    </header>
+
+    <div class="post-content" itemprop="articleBody">
+      <h1 id="window-object-and-bom">Window object and BOM</h1>
+
+<h2 id="window">Window</h2>
+
+<p>Window object is that handling whole browser. Such as tabs, scroll, History etc… 
+Window object can touch browser. And also Window object have these features</p>
+<ol>
+  <li>It is global object, and parent of all objects</li>
+  <li>So it can be skip, like window.onscroll() -&gt; just onscroll()</li>
+  <li>It hold every variable that you made</li>
+  <li>Finally, it contains basic variable types, String, Boolean, Object, Number, Function, Array</li>
+  <li>I’m not sure about this but I think that it’s first class citizen</li>
+</ol>
+
+<p>윈도우 객체는 브라우저 전체를 다룹니다. 예를 들면 탭, 스크롤, 주소창 등등 브라우저 전부를 다룰 수 있는  객체라 할 수 있습니다. 그리고 또한 아래의 특징을 지닙니다.</p>
+<ol>
+  <li>모든 객체의 조상이 되는 전역변수입니다.</li>
+  <li>때문에 윈도우 객체는 생략될 수 있습니다. 다음과 같이 window.onscroll() -&gt; onscroll() 처럼 간단히 쓸수 있습니다.</li>
+  <li>사용자가 만든 모든 변수를 자신 안에 등록시킵니다.</li>
+  <li>마지막으로 이것은 기본 자바스크립트의 자료형, String, Boolean, Object, Number, Function, Array을 포함합니다.</li>
+  <li>이것은 확실한 것은 아닙니다만, 위의 특성과 함께 자기 자신을 반환할 수 있다면, window 객체는 1급 객체입니다.</li>
+</ol>
+
+<h2 id="domdocument-object-model">DOM(Document Object Model)</h2>
+<p>Document object is handling website. Therefore Window object include Document object.
+It is programming interface of HTML and XML document. DOM provide some ways that programming language can be access document. It controlls content in <code class="highlighter-rouge">&lt;body&gt;</code>, below is a part of DOM methods</p>
+
+<p>Document는 웹사이트를 다루는 오브젝트로써 Window object일부로 생각하면 됩니다. DOM은 HTML과 XML document에 대한 프로그래밍 인터페이스이라고 할 수 있는데요. DOM은 프로그래밍 언어가 document에 접근하여 body내부의 내용을 조작할 수 있습니다.
+아래는 DOM의 메소드들 중 일부의 예시 입니다.</p>
+
+<h3 id="on-scroll-event">on scroll Event</h3>
+
+<p>Excute a JavaScript when a <code class="highlighter-rouge">&lt;div&gt;</code> elements is being scrolled</p>
+
+<p><code class="highlighter-rouge">&lt;div&gt;</code> 요소가  스크롤 됬을때 자바스크립트를 실행한다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div onscroll="myFunction()"&gt;
+</code></pre></div></div>
+
+<h3 id="html-dom-getelementbyid">HTML DOM getElementById()</h3>
+<p>This method returns element objects which have specific id value<br />
+<code class="highlighter-rouge">document.getElementById("demo");</code></p>
+
+<p>And we can add attribute by using .</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function myFunction() {
+  var x = document.getElementById("demo");
+  x.style.color = "red";
+}
+  
+</code></pre></div></div>
+<p>origin:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;p id="demo"&gt;
+  Click the button to change the color of this paragraph.
+&lt;/p&gt;
+&lt;button onclick="myFunction()"&gt;Try it&lt;/button&gt;
+
+</code></pre></div></div>
+<p>result:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;p id="demo" style="color: red;"&gt;
+  Click the button to change the color of this paragraph.
+&lt;/p&gt;
+&lt;button onclick="myFunction()"&gt;Try it&lt;/button&gt;
+
+</code></pre></div></div>
+
+<h3 id="nodename">nodeName</h3>
+
+<p>Get the node name of a elepents:</p>
+
+<p>for example:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;button onclick="myFunction()"&gt;Try it&lt;/button&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function myFunction() {
+  var x = document.documentElement.nodeName;
+  document.getElementById("demo").innerHTML = x;
+}
+&lt;/script&gt;s
+</code></pre></div></div>
+
+<p>result:
+<code class="highlighter-rouge">P</code></p>
+
+<h3 id="docuemntelement-property">docuemntElement Property</h3>
+
+<p>Return the documentElement of the document, as a node name:</p>
+
+<p><code class="highlighter-rouge">var x = document.documentElement.nodeName;</code>
+return:
+<code class="highlighter-rouge">HTML</code></p>
+
+<p>In addition it returns HTML or XML or some kind of things. But, In the most it will return HTML.</p>
+
+<h3 id="innerhtml-property">innerHTML Property</h3>
+
+<p>Change HTML content of element with id</p>
+
+<h2 id="bombrowser-object-model">BOM(Browser Object Model)</h2>
+<p>It’s a Browser Object Model which is made for communicating between brower and JS.</p>
+
+<p>BOM은 자바 스크립트와 브라우저가 통신할 수 있게 해줍니다. favorite이나 주소창 그런것들을 사용할 수 있게 해줍니다.</p>
+
+
+      <div id="disqus_thread"></div>
+<script>
+/**
+ *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+ *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+ */
+
+var disqus_config = function () {
+	this.page.url = "http://localhost:4000/2014/01/01/default.html";  // Replace PAGE_URL with your page's canonical URL variable
+	this.page.identifier = "/2014/01/01/default"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+ 
+(function() { // DON'T EDIT BELOW THIS LINE
+	var d = document, s = d.createElement('script');
+	s.src = '//imformal-refs.disqus.com/embed.js';
+	s.setAttribute('data-timestamp', +new Date());
+	(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+ 
+      <!--page.comments-->
+      •
+      <a href="https://omnyx2.github.io/2014/01/01/default.html#disqus_thread">
+        0 Comments
+      </a>
+      
+    </div>
+  </article>
+</div>
+<div class="sidebar-relate-posts">
+  
+  <nav class="sidebar_left">
+    <ul class="toc__menu">
+      
+      <h2>javascript</h2>
+       
+      
+      <li>
+        <a href="/2019/01/01/default.html">JavaScript, Window and DOM, BOM </a>
+      </li>
+      
+      <li>
+        <a href="/2018/01/01/default.html">11 </a>
+      </li>
+      
+      <li>
+        <a href="/2017/01/01/default.html">10 </a>
+      </li>
+      
+      <li>
+        <a href="/2016/01/01/default.html">9 </a>
+      </li>
+      
+      <li>
+        <a href="/2015/01/01/default.html">8 </a>
+      </li>
+      
+      <li>
+        <a href="/2014/01/01/default.html">7 </a>
+      </li>
+      
+      <li>
+        <a href="/2013/01/01/default.html">6 </a>
+      </li>
+      
+      <li>
+        <a href="/2012/01/01/default.html">5 </a>
+      </li>
+      
+      <li>
+        <a href="/2011/01/01/default.html">4 </a>
+      </li>
+      
+      <li>
+        <a href="/2010/01/01/default.html">3 </a>
+      </li>
+      
+      <li>
+        <a href="/2009/01/01/default.html">1 </a>
+      </li>
+       
+    </ul>
+  </nav>
+</div>
+<script>
+
+  
+    function screenchange(y) {
+      var sidebar = document.getElementById("sidebar__right");
+      if (y.matches) {
+        // If media query matches
+        sidebar.style.display = "none";
+      } else {
+        sidebar.style.display = "block";
+      }
+    }
+
+    window.onload = function() {
+      var y = window.matchMedia("(max-width: 60em)");
+      screenchange(y); // Call listener function at run time
+      y.addListener(screenchange); // Attach listener function on state changes
+    }
+
+    function OpenSidebar() {
+      var sidebar = document.getElementById("sidebar__right");
+      if (sidebar.style.display === "none") {
+        sidebar.style.display = "block";
+      } else {
+        sidebar.style.display = "none";
+      }
+    }
+
+    window.onscroll = function() {becomingsticky2()};
+
+        var sidebarright = document.getElementById("sidebar__right");
+        var fixed__right = sidebarright.offsetTop;
+
+        function becomingsticky2() {
+
+          if (window.pageYOffset >= fixed__right) {
+            sidebarright.classList.add("fixed");
+          }
+          else {
+            sidebarright.classList.remove("fixed");
+          }
+        }
+
+
+
+  </script>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Imformal refs</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>Imformal refs</li>
+          <li><a href="mailto:omnyx2@gmail.com">omnyx2@gmail.com</a></li>
+          <li><a href="mailto:hopsprings2ternal@gmail.com">hopsprings2ternal@gmail.com</a></li>
+          <li>
+              <div class="middle">
+                  <a class="btn" href="https://www.facebook.com/">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a class="btn" href="https://www.twitter.com">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a class="btn" href="https://www.google.com">
+                    <i class="fab fa-google"></i>
+                  </a>
+                  <a class="btn" href="https://github.com/">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a class="btn" href="https://www.youtube.com">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                </div>
+          </li>
+        </ul>
+      </div>
+    
+     
+      
+
+      <div class="footer-col footer-col-3">
+        <p>Imformal django references translation to korean, this project starts from Gangju, South, Korea. GIST college. 
+</p>
+      </div>
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+    <script id="dsq-count-scr" src="//imformal-refs.disqus.com/count.js" async></script>
+  </body>
+
+</html>

@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Imformal refs</title>
+    <description>Imformal django references translation to korean, this project starts from Gangju, South, Korea. GIST college. 
+</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 27 Mar 2019 22:49:31 +0900</pubDate>
+    <lastBuildDate>Wed, 27 Mar 2019 22:49:31 +0900</lastBuildDate>
+    <generator>Jekyll v3.7.4</generator>
+    
+      <item>
+        <title>Default</title>
+        <description>&lt;h1 id=&quot;window-object-and-bom&quot;&gt;Window object and BOM&lt;/h1&gt;
+
+&lt;h2 id=&quot;window&quot;&gt;Window&lt;/h2&gt;
+
+&lt;p&gt;Window object is that handling whole browser. Such as tabs, scroll, History etc… 
+Window object can touch browser. And also Window object have these features&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;It is global object, and parent of all objects&lt;/li&gt;
+  &lt;li&gt;So it can be skip, like window.onscroll() -&amp;gt; just onscroll()&lt;/li&gt;
+  &lt;li&gt;It hold every variable that you made&lt;/li&gt;
+  &lt;li&gt;Finally, it contains basic variable types, String, Boolean, Object, Number, Function, Array&lt;/li&gt;
+  &lt;li&gt;I’m not sure about this but I think that it’s first class citizen&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;윈도우 객체는 브라우저 전체를 다룹니다. 예를 들면 탭, 스크롤, 주소창 등등 브라우저 전부를 다룰 수 있는  객체라 할 수 있습니다. 그리고 또한 아래의 특징을 지닙니다.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;모든 객체의 조상이 되는 전역변수입니다.&lt;/li&gt;
+  &lt;li&gt;때문에 윈도우 객체는 생략될 수 있습니다. 다음과 같이 window.onscroll() -&amp;gt; onscroll() 처럼 간단히 쓸수 있습니다.&lt;/li&gt;
+  &lt;li&gt;사용자가 만든 모든 변수를 자신 안에 등록시킵니다.&lt;/li&gt;
+  &lt;li&gt;마지막으로 이것은 기본 자바스크립트의 자료형, String, Boolean, Object, Number, Function, Array을 포함합니다.&lt;/li&gt;
+  &lt;li&gt;이것은 확실한 것은 아닙니다만, 위의 특성과 함께 자기 자신을 반환할 수 있다면, window 객체는 1급 객체입니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;domdocument-object-model&quot;&gt;DOM(Document Object Model)&lt;/h2&gt;
+&lt;p&gt;Document object is handling website. Therefore Window object include Document object.
+It is programming interface of HTML and XML document. DOM provide some ways that programming language can be access document. It controlls content in &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt;, below is a part of DOM methods&lt;/p&gt;
+
+&lt;p&gt;Document는 웹사이트를 다루는 오브젝트로써 Window object일부로 생각하면 됩니다. DOM은 HTML과 XML document에 대한 프로그래밍 인터페이스이라고 할 수 있는데요. DOM은 프로그래밍 언어가 document에 접근하여 body내부의 내용을 조작할 수 있습니다.
+아래는 DOM의 메소드들 중 일부의 예시 입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;on-scroll-event&quot;&gt;on scroll Event&lt;/h3&gt;
+
+&lt;p&gt;Excute a JavaScript when a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; elements is being scrolled&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 요소가  스크롤 됬을때 자바스크립트를 실행한다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div onscroll=&quot;myFunction()&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;html-dom-getelementbyid&quot;&gt;HTML DOM getElementById()&lt;/h3&gt;
+&lt;p&gt;This method returns element objects which have specific id value&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;document.getElementById(&quot;demo&quot;);&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And we can add attribute by using .&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function myFunction() {
+  var x = document.getElementById(&quot;demo&quot;);
+  x.style.color = &quot;red&quot;;
+}
+  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;origin:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p id=&quot;demo&quot;&amp;gt;
+  Click the button to change the color of this paragraph.
+&amp;lt;/p&amp;gt;
+&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;result:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p id=&quot;demo&quot; style=&quot;color: red;&quot;&amp;gt;
+  Click the button to change the color of this paragraph.
+&amp;lt;/p&amp;gt;
+&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;nodename&quot;&gt;nodeName&lt;/h3&gt;
+
+&lt;p&gt;Get the node name of a elepents:&lt;/p&gt;
+
+&lt;p&gt;for example:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&amp;lt;p id=&quot;demo&quot;&amp;gt;&amp;lt;/p&amp;gt;
+
+&amp;lt;script&amp;gt;
+function myFunction() {
+  var x = document.documentElement.nodeName;
+  document.getElementById(&quot;demo&quot;).innerHTML = x;
+}
+&amp;lt;/script&amp;gt;s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;result:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;P&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;docuemntelement-property&quot;&gt;docuemntElement Property&lt;/h3&gt;
+
+&lt;p&gt;Return the documentElement of the document, as a node name:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;var x = document.documentElement.nodeName;&lt;/code&gt;
+return:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In addition it returns HTML or XML or some kind of things. But, In the most it will return HTML.&lt;/p&gt;
+
+&lt;h3 id=&quot;innerhtml-property&quot;&gt;innerHTML Property&lt;/h3&gt;
+
+&lt;p&gt;Change HTML content of element with id&lt;/p&gt;
+
+&lt;h2 id=&quot;bombrowser-object-model&quot;&gt;BOM(Browser Object Model)&lt;/h2&gt;
+&lt;p&gt;It’s a Browser Object Model which is made for communicating between brower and JS.&lt;/p&gt;
+
+&lt;p&gt;BOM은 자바 스크립트와 브라우저가 통신할 수 있게 해줍니다. favorite이나 주소창 그런것들을 사용할 수 있게 해줍니다.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 01 Jan 2019 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2019/01/01/default.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/01/01/default.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Default</title>
+        <description>&lt;h1 id=&quot;window-object-and-bom&quot;&gt;Window object and BOM&lt;/h1&gt;
+
+&lt;h2 id=&quot;window&quot;&gt;Window&lt;/h2&gt;
+
+&lt;p&gt;Window object is that handling whole browser. Such as tabs, scroll, History etc… 
+Window object can touch browser. And also Window object have these features&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;It is global object, and parent of all objects&lt;/li&gt;
+  &lt;li&gt;So it can be skip, like window.onscroll() -&amp;gt; just onscroll()&lt;/li&gt;
+  &lt;li&gt;It hold every variable that you made&lt;/li&gt;
+  &lt;li&gt;Finally, it contains basic variable types, String, Boolean, Object, Number, Function, Array&lt;/li&gt;
+  &lt;li&gt;I’m not sure about this but I think that it’s first class citizen&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;윈도우 객체는 브라우저 전체를 다룹니다. 예를 들면 탭, 스크롤, 주소창 등등 브라우저 전부를 다룰 수 있는  객체라 할 수 있습니다. 그리고 또한 아래의 특징을 지닙니다.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;모든 객체의 조상이 되는 전역변수입니다.&lt;/li&gt;
+  &lt;li&gt;때문에 윈도우 객체는 생략될 수 있습니다. 다음과 같이 window.onscroll() -&amp;gt; onscroll() 처럼 간단히 쓸수 있습니다.&lt;/li&gt;
+  &lt;li&gt;사용자가 만든 모든 변수를 자신 안에 등록시킵니다.&lt;/li&gt;
+  &lt;li&gt;마지막으로 이것은 기본 자바스크립트의 자료형, String, Boolean, Object, Number, Function, Array을 포함합니다.&lt;/li&gt;
+  &lt;li&gt;이것은 확실한 것은 아닙니다만, 위의 특성과 함께 자기 자신을 반환할 수 있다면, window 객체는 1급 객체입니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;domdocument-object-model&quot;&gt;DOM(Document Object Model)&lt;/h2&gt;
+&lt;p&gt;Document object is handling website. Therefore Window object include Document object.
+It is programming interface of HTML and XML document. DOM provide some ways that programming language can be access document. It controlls content in &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt;, below is a part of DOM methods&lt;/p&gt;
+
+&lt;p&gt;Document는 웹사이트를 다루는 오브젝트로써 Window object일부로 생각하면 됩니다. DOM은 HTML과 XML document에 대한 프로그래밍 인터페이스이라고 할 수 있는데요. DOM은 프로그래밍 언어가 document에 접근하여 body내부의 내용을 조작할 수 있습니다.
+아래는 DOM의 메소드들 중 일부의 예시 입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;on-scroll-event&quot;&gt;on scroll Event&lt;/h3&gt;
+
+&lt;p&gt;Excute a JavaScript when a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; elements is being scrolled&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 요소가  스크롤 됬을때 자바스크립트를 실행한다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div onscroll=&quot;myFunction()&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;html-dom-getelementbyid&quot;&gt;HTML DOM getElementById()&lt;/h3&gt;
+&lt;p&gt;This method returns element objects which have specific id value&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;document.getElementById(&quot;demo&quot;);&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And we can add attribute by using .&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function myFunction() {
+  var x = document.getElementById(&quot;demo&quot;);
+  x.style.color = &quot;red&quot;;
+}
+  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;origin:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p id=&quot;demo&quot;&amp;gt;
+  Click the button to change the color of this paragraph.
+&amp;lt;/p&amp;gt;
+&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;result:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p id=&quot;demo&quot; style=&quot;color: red;&quot;&amp;gt;
+  Click the button to change the color of this paragraph.
+&amp;lt;/p&amp;gt;
+&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;nodename&quot;&gt;nodeName&lt;/h3&gt;
+
+&lt;p&gt;Get the node name of a elepents:&lt;/p&gt;
+
+&lt;p&gt;for example:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&amp;lt;p id=&quot;demo&quot;&amp;gt;&amp;lt;/p&amp;gt;
+
+&amp;lt;script&amp;gt;
+function myFunction() {
+  var x = document.documentElement.nodeName;
+  document.getElementById(&quot;demo&quot;).innerHTML = x;
+}
+&amp;lt;/script&amp;gt;s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;result:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;P&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;docuemntelement-property&quot;&gt;docuemntElement Property&lt;/h3&gt;
+
+&lt;p&gt;Return the documentElement of the document, as a node name:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;var x = document.documentElement.nodeName;&lt;/code&gt;
+return:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In addition it returns HTML or XML or some kind of things. But, In the most it will return HTML.&lt;/p&gt;
+
+&lt;h3 id=&quot;innerhtml-property&quot;&gt;innerHTML Property&lt;/h3&gt;
+
+&lt;p&gt;Change HTML content of element with id&lt;/p&gt;
+
+&lt;h2 id=&quot;bombrowser-object-model&quot;&gt;BOM(Browser Object Model)&lt;/h2&gt;
+&lt;p&gt;It’s a Browser Object Model which is made for communicating between brower and JS.&lt;/p&gt;
+
+&lt;p&gt;BOM은 자바 스크립트와 브라우저가 통신할 수 있게 해줍니다. favorite이나 주소창 그런것들을 사용할 수 있게 해줍니다.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 01 Jan 2018 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2018/01/01/default.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/01/01/default.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Default</title>
+        <description>&lt;h1 id=&quot;window-object-and-bom&quot;&gt;Window object and BOM&lt;/h1&gt;
+
+&lt;h2 id=&quot;window&quot;&gt;Window&lt;/h2&gt;
+
+&lt;p&gt;Window object is that handling whole browser. Such as tabs, scroll, History etc… 
+Window object can touch browser. And also Window object have these features&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;It is global object, and parent of all objects&lt;/li&gt;
+  &lt;li&gt;So it can be skip, like window.onscroll() -&amp;gt; just onscroll()&lt;/li&gt;
+  &lt;li&gt;It hold every variable that you made&lt;/li&gt;
+  &lt;li&gt;Finally, it contains basic variable types, String, Boolean, Object, Number, Function, Array&lt;/li&gt;
+  &lt;li&gt;I’m not sure about this but I think that it’s first class citizen&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;윈도우 객체는 브라우저 전체를 다룹니다. 예를 들면 탭, 스크롤, 주소창 등등 브라우저 전부를 다룰 수 있는  객체라 할 수 있습니다. 그리고 또한 아래의 특징을 지닙니다.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;모든 객체의 조상이 되는 전역변수입니다.&lt;/li&gt;
+  &lt;li&gt;때문에 윈도우 객체는 생략될 수 있습니다. 다음과 같이 window.onscroll() -&amp;gt; onscroll() 처럼 간단히 쓸수 있습니다.&lt;/li&gt;
+  &lt;li&gt;사용자가 만든 모든 변수를 자신 안에 등록시킵니다.&lt;/li&gt;
+  &lt;li&gt;마지막으로 이것은 기본 자바스크립트의 자료형, String, Boolean, Object, Number, Function, Array을 포함합니다.&lt;/li&gt;
+  &lt;li&gt;이것은 확실한 것은 아닙니다만, 위의 특성과 함께 자기 자신을 반환할 수 있다면, window 객체는 1급 객체입니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;domdocument-object-model&quot;&gt;DOM(Document Object Model)&lt;/h2&gt;
+&lt;p&gt;Document object is handling website. Therefore Window object include Document object.
+It is programming interface of HTML and XML document. DOM provide some ways that programming language can be access document. It controlls content in &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt;, below is a part of DOM methods&lt;/p&gt;
+
+&lt;p&gt;Document는 웹사이트를 다루는 오브젝트로써 Window object일부로 생각하면 됩니다. DOM은 HTML과 XML document에 대한 프로그래밍 인터페이스이라고 할 수 있는데요. DOM은 프로그래밍 언어가 document에 접근하여 body내부의 내용을 조작할 수 있습니다.
+아래는 DOM의 메소드들 중 일부의 예시 입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;on-scroll-event&quot;&gt;on scroll Event&lt;/h3&gt;
+
+&lt;p&gt;Excute a JavaScript when a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; elements is being scrolled&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 요소가  스크롤 됬을때 자바스크립트를 실행한다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div onscroll=&quot;myFunction()&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;html-dom-getelementbyid&quot;&gt;HTML DOM getElementById()&lt;/h3&gt;
+&lt;p&gt;This method returns element objects which have specific id value&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;document.getElementById(&quot;demo&quot;);&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And we can add attribute by using .&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function myFunction() {
+  var x = document.getElementById(&quot;demo&quot;);
+  x.style.color = &quot;red&quot;;
+}
+  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;origin:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p id=&quot;demo&quot;&amp;gt;
+  Click the button to change the color of this paragraph.
+&amp;lt;/p&amp;gt;
+&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;result:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p id=&quot;demo&quot; style=&quot;color: red;&quot;&amp;gt;
+  Click the button to change the color of this paragraph.
+&amp;lt;/p&amp;gt;
+&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;nodename&quot;&gt;nodeName&lt;/h3&gt;
+
+&lt;p&gt;Get the node name of a elepents:&lt;/p&gt;
+
+&lt;p&gt;for example:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&amp;lt;p id=&quot;demo&quot;&amp;gt;&amp;lt;/p&amp;gt;
+
+&amp;lt;script&amp;gt;
+function myFunction() {
+  var x = document.documentElement.nodeName;
+  document.getElementById(&quot;demo&quot;).innerHTML = x;
+}
+&amp;lt;/script&amp;gt;s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;result:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;P&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;docuemntelement-property&quot;&gt;docuemntElement Property&lt;/h3&gt;
+
+&lt;p&gt;Return the documentElement of the document, as a node name:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;var x = document.documentElement.nodeName;&lt;/code&gt;
+return:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In addition it returns HTML or XML or some kind of things. But, In the most it will return HTML.&lt;/p&gt;
+
+&lt;h3 id=&quot;innerhtml-property&quot;&gt;innerHTML Property&lt;/h3&gt;
+
+&lt;p&gt;Change HTML content of element with id&lt;/p&gt;
+
+&lt;h2 id=&quot;bombrowser-object-model&quot;&gt;BOM(Browser Object Model)&lt;/h2&gt;
+&lt;p&gt;It’s a Browser Object Model which is made for communicating between brower and JS.&lt;/p&gt;
+
+&lt;p&gt;BOM은 자바 스크립트와 브라우저가 통신할 수 있게 해줍니다. favorite이나 주소창 그런것들을 사용할 수 있게 해줍니다.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 01 Jan 2017 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2017/01/01/default.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/01/01/default.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Default</title>
+        <description>&lt;h1 id=&quot;window-object-and-bom&quot;&gt;Window object and BOM&lt;/h1&gt;
+
+&lt;h2 id=&quot;window&quot;&gt;Window&lt;/h2&gt;
+
+&lt;p&gt;Window object is that handling whole browser. Such as tabs, scroll, History etc… 
+Window object can touch browser. And also Window object have these features&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;It is global object, and parent of all objects&lt;/li&gt;
+  &lt;li&gt;So it can be skip, like window.onscroll() -&amp;gt; just onscroll()&lt;/li&gt;
+  &lt;li&gt;It hold every variable that you made&lt;/li&gt;
+  &lt;li&gt;Finally, it contains basic variable types, String, Boolean, Object, Number, Function, Array&lt;/li&gt;
+  &lt;li&gt;I’m not sure about this but I think that it’s first class citizen&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;윈도우 객체는 브라우저 전체를 다룹니다. 예를 들면 탭, 스크롤, 주소창 등등 브라우저 전부를 다룰 수 있는  객체라 할 수 있습니다. 그리고 또한 아래의 특징을 지닙니다.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;모든 객체의 조상이 되는 전역변수입니다.&lt;/li&gt;
+  &lt;li&gt;때문에 윈도우 객체는 생략될 수 있습니다. 다음과 같이 window.onscroll() -&amp;gt; onscroll() 처럼 간단히 쓸수 있습니다.&lt;/li&gt;
+  &lt;li&gt;사용자가 만든 모든 변수를 자신 안에 등록시킵니다.&lt;/li&gt;
+  &lt;li&gt;마지막으로 이것은 기본 자바스크립트의 자료형, String, Boolean, Object, Number, Function, Array을 포함합니다.&lt;/li&gt;
+  &lt;li&gt;이것은 확실한 것은 아닙니다만, 위의 특성과 함께 자기 자신을 반환할 수 있다면, window 객체는 1급 객체입니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;domdocument-object-model&quot;&gt;DOM(Document Object Model)&lt;/h2&gt;
+&lt;p&gt;Document object is handling website. Therefore Window object include Document object.
+It is programming interface of HTML and XML document. DOM provide some ways that programming language can be access document. It controlls content in &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt;, below is a part of DOM methods&lt;/p&gt;
+
+&lt;p&gt;Document는 웹사이트를 다루는 오브젝트로써 Window object일부로 생각하면 됩니다. DOM은 HTML과 XML document에 대한 프로그래밍 인터페이스이라고 할 수 있는데요. DOM은 프로그래밍 언어가 document에 접근하여 body내부의 내용을 조작할 수 있습니다.
+아래는 DOM의 메소드들 중 일부의 예시 입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;on-scroll-event&quot;&gt;on scroll Event&lt;/h3&gt;
+
+&lt;p&gt;Excute a JavaScript when a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; elements is being scrolled&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 요소가  스크롤 됬을때 자바스크립트를 실행한다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div onscroll=&quot;myFunction()&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;html-dom-getelementbyid&quot;&gt;HTML DOM getElementById()&lt;/h3&gt;
+&lt;p&gt;This method returns element objects which have specific id value&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;document.getElementById(&quot;demo&quot;);&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And we can add attribute by using .&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function myFunction() {
+  var x = document.getElementById(&quot;demo&quot;);
+  x.style.color = &quot;red&quot;;
+}
+  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;origin:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p id=&quot;demo&quot;&amp;gt;
+  Click the button to change the color of this paragraph.
+&amp;lt;/p&amp;gt;
+&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;result:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p id=&quot;demo&quot; style=&quot;color: red;&quot;&amp;gt;
+  Click the button to change the color of this paragraph.
+&amp;lt;/p&amp;gt;
+&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;nodename&quot;&gt;nodeName&lt;/h3&gt;
+
+&lt;p&gt;Get the node name of a elepents:&lt;/p&gt;
+
+&lt;p&gt;for example:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&amp;lt;p id=&quot;demo&quot;&amp;gt;&amp;lt;/p&amp;gt;
+
+&amp;lt;script&amp;gt;
+function myFunction() {
+  var x = document.documentElement.nodeName;
+  document.getElementById(&quot;demo&quot;).innerHTML = x;
+}
+&amp;lt;/script&amp;gt;s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;result:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;P&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;docuemntelement-property&quot;&gt;docuemntElement Property&lt;/h3&gt;
+
+&lt;p&gt;Return the documentElement of the document, as a node name:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;var x = document.documentElement.nodeName;&lt;/code&gt;
+return:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In addition it returns HTML or XML or some kind of things. But, In the most it will return HTML.&lt;/p&gt;
+
+&lt;h3 id=&quot;innerhtml-property&quot;&gt;innerHTML Property&lt;/h3&gt;
+
+&lt;p&gt;Change HTML content of element with id&lt;/p&gt;
+
+&lt;h2 id=&quot;bombrowser-object-model&quot;&gt;BOM(Browser Object Model)&lt;/h2&gt;
+&lt;p&gt;It’s a Browser Object Model which is made for communicating between brower and JS.&lt;/p&gt;
+
+&lt;p&gt;BOM은 자바 스크립트와 브라우저가 통신할 수 있게 해줍니다. favorite이나 주소창 그런것들을 사용할 수 있게 해줍니다.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2016/01/01/default.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/01/01/default.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Default</title>
+        <description>&lt;h1 id=&quot;window-object-and-bom&quot;&gt;Window object and BOM&lt;/h1&gt;
+
+&lt;h2 id=&quot;window&quot;&gt;Window&lt;/h2&gt;
+
+&lt;p&gt;Window object is that handling whole browser. Such as tabs, scroll, History etc… 
+Window object can touch browser. And also Window object have these features&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;It is global object, and parent of all objects&lt;/li&gt;
+  &lt;li&gt;So it can be skip, like window.onscroll() -&amp;gt; just onscroll()&lt;/li&gt;
+  &lt;li&gt;It hold every variable that you made&lt;/li&gt;
+  &lt;li&gt;Finally, it contains basic variable types, String, Boolean, Object, Number, Function, Array&lt;/li&gt;
+  &lt;li&gt;I’m not sure about this but I think that it’s first class citizen&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;윈도우 객체는 브라우저 전체를 다룹니다. 예를 들면 탭, 스크롤, 주소창 등등 브라우저 전부를 다룰 수 있는  객체라 할 수 있습니다. 그리고 또한 아래의 특징을 지닙니다.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;모든 객체의 조상이 되는 전역변수입니다.&lt;/li&gt;
+  &lt;li&gt;때문에 윈도우 객체는 생략될 수 있습니다. 다음과 같이 window.onscroll() -&amp;gt; onscroll() 처럼 간단히 쓸수 있습니다.&lt;/li&gt;
+  &lt;li&gt;사용자가 만든 모든 변수를 자신 안에 등록시킵니다.&lt;/li&gt;
+  &lt;li&gt;마지막으로 이것은 기본 자바스크립트의 자료형, String, Boolean, Object, Number, Function, Array을 포함합니다.&lt;/li&gt;
+  &lt;li&gt;이것은 확실한 것은 아닙니다만, 위의 특성과 함께 자기 자신을 반환할 수 있다면, window 객체는 1급 객체입니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;domdocument-object-model&quot;&gt;DOM(Document Object Model)&lt;/h2&gt;
+&lt;p&gt;Document object is handling website. Therefore Window object include Document object.
+It is programming interface of HTML and XML document. DOM provide some ways that programming language can be access document. It controlls content in &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt;, below is a part of DOM methods&lt;/p&gt;
+
+&lt;p&gt;Document는 웹사이트를 다루는 오브젝트로써 Window object일부로 생각하면 됩니다. DOM은 HTML과 XML document에 대한 프로그래밍 인터페이스이라고 할 수 있는데요. DOM은 프로그래밍 언어가 document에 접근하여 body내부의 내용을 조작할 수 있습니다.
+아래는 DOM의 메소드들 중 일부의 예시 입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;on-scroll-event&quot;&gt;on scroll Event&lt;/h3&gt;
+
+&lt;p&gt;Excute a JavaScript when a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; elements is being scrolled&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 요소가  스크롤 됬을때 자바스크립트를 실행한다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div onscroll=&quot;myFunction()&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;html-dom-getelementbyid&quot;&gt;HTML DOM getElementById()&lt;/h3&gt;
+&lt;p&gt;This method returns element objects which have specific id value&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;document.getElementById(&quot;demo&quot;);&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And we can add attribute by using .&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function myFunction() {
+  var x = document.getElementById(&quot;demo&quot;);
+  x.style.color = &quot;red&quot;;
+}
+  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;origin:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p id=&quot;demo&quot;&amp;gt;
+  Click the button to change the color of this paragraph.
+&amp;lt;/p&amp;gt;
+&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;result:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p id=&quot;demo&quot; style=&quot;color: red;&quot;&amp;gt;
+  Click the button to change the color of this paragraph.
+&amp;lt;/p&amp;gt;
+&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;nodename&quot;&gt;nodeName&lt;/h3&gt;
+
+&lt;p&gt;Get the node name of a elepents:&lt;/p&gt;
+
+&lt;p&gt;for example:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&amp;lt;p id=&quot;demo&quot;&amp;gt;&amp;lt;/p&amp;gt;
+
+&amp;lt;script&amp;gt;
+function myFunction() {
+  var x = document.documentElement.nodeName;
+  document.getElementById(&quot;demo&quot;).innerHTML = x;
+}
+&amp;lt;/script&amp;gt;s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;result:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;P&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;docuemntelement-property&quot;&gt;docuemntElement Property&lt;/h3&gt;
+
+&lt;p&gt;Return the documentElement of the document, as a node name:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;var x = document.documentElement.nodeName;&lt;/code&gt;
+return:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In addition it returns HTML or XML or some kind of things. But, In the most it will return HTML.&lt;/p&gt;
+
+&lt;h3 id=&quot;innerhtml-property&quot;&gt;innerHTML Property&lt;/h3&gt;
+
+&lt;p&gt;Change HTML content of element with id&lt;/p&gt;
+
+&lt;h2 id=&quot;bombrowser-object-model&quot;&gt;BOM(Browser Object Model)&lt;/h2&gt;
+&lt;p&gt;It’s a Browser Object Model which is made for communicating between brower and JS.&lt;/p&gt;
+
+&lt;p&gt;BOM은 자바 스크립트와 브라우저가 통신할 수 있게 해줍니다. favorite이나 주소창 그런것들을 사용할 수 있게 해줍니다.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 01 Jan 2015 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2015/01/01/default.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/01/01/default.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Default</title>
+        <description>&lt;h1 id=&quot;window-object-and-bom&quot;&gt;Window object and BOM&lt;/h1&gt;
+
+&lt;h2 id=&quot;window&quot;&gt;Window&lt;/h2&gt;
+
+&lt;p&gt;Window object is that handling whole browser. Such as tabs, scroll, History etc… 
+Window object can touch browser. And also Window object have these features&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;It is global object, and parent of all objects&lt;/li&gt;
+  &lt;li&gt;So it can be skip, like window.onscroll() -&amp;gt; just onscroll()&lt;/li&gt;
+  &lt;li&gt;It hold every variable that you made&lt;/li&gt;
+  &lt;li&gt;Finally, it contains basic variable types, String, Boolean, Object, Number, Function, Array&lt;/li&gt;
+  &lt;li&gt;I’m not sure about this but I think that it’s first class citizen&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;윈도우 객체는 브라우저 전체를 다룹니다. 예를 들면 탭, 스크롤, 주소창 등등 브라우저 전부를 다룰 수 있는  객체라 할 수 있습니다. 그리고 또한 아래의 특징을 지닙니다.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;모든 객체의 조상이 되는 전역변수입니다.&lt;/li&gt;
+  &lt;li&gt;때문에 윈도우 객체는 생략될 수 있습니다. 다음과 같이 window.onscroll() -&amp;gt; onscroll() 처럼 간단히 쓸수 있습니다.&lt;/li&gt;
+  &lt;li&gt;사용자가 만든 모든 변수를 자신 안에 등록시킵니다.&lt;/li&gt;
+  &lt;li&gt;마지막으로 이것은 기본 자바스크립트의 자료형, String, Boolean, Object, Number, Function, Array을 포함합니다.&lt;/li&gt;
+  &lt;li&gt;이것은 확실한 것은 아닙니다만, 위의 특성과 함께 자기 자신을 반환할 수 있다면, window 객체는 1급 객체입니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;domdocument-object-model&quot;&gt;DOM(Document Object Model)&lt;/h2&gt;
+&lt;p&gt;Document object is handling website. Therefore Window object include Document object.
+It is programming interface of HTML and XML document. DOM provide some ways that programming language can be access document. It controlls content in &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt;, below is a part of DOM methods&lt;/p&gt;
+
+&lt;p&gt;Document는 웹사이트를 다루는 오브젝트로써 Window object일부로 생각하면 됩니다. DOM은 HTML과 XML document에 대한 프로그래밍 인터페이스이라고 할 수 있는데요. DOM은 프로그래밍 언어가 document에 접근하여 body내부의 내용을 조작할 수 있습니다.
+아래는 DOM의 메소드들 중 일부의 예시 입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;on-scroll-event&quot;&gt;on scroll Event&lt;/h3&gt;
+
+&lt;p&gt;Excute a JavaScript when a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; elements is being scrolled&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 요소가  스크롤 됬을때 자바스크립트를 실행한다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div onscroll=&quot;myFunction()&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;html-dom-getelementbyid&quot;&gt;HTML DOM getElementById()&lt;/h3&gt;
+&lt;p&gt;This method returns element objects which have specific id value&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;document.getElementById(&quot;demo&quot;);&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And we can add attribute by using .&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function myFunction() {
+  var x = document.getElementById(&quot;demo&quot;);
+  x.style.color = &quot;red&quot;;
+}
+  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;origin:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p id=&quot;demo&quot;&amp;gt;
+  Click the button to change the color of this paragraph.
+&amp;lt;/p&amp;gt;
+&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;result:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p id=&quot;demo&quot; style=&quot;color: red;&quot;&amp;gt;
+  Click the button to change the color of this paragraph.
+&amp;lt;/p&amp;gt;
+&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;nodename&quot;&gt;nodeName&lt;/h3&gt;
+
+&lt;p&gt;Get the node name of a elepents:&lt;/p&gt;
+
+&lt;p&gt;for example:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&amp;lt;p id=&quot;demo&quot;&amp;gt;&amp;lt;/p&amp;gt;
+
+&amp;lt;script&amp;gt;
+function myFunction() {
+  var x = document.documentElement.nodeName;
+  document.getElementById(&quot;demo&quot;).innerHTML = x;
+}
+&amp;lt;/script&amp;gt;s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;result:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;P&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;docuemntelement-property&quot;&gt;docuemntElement Property&lt;/h3&gt;
+
+&lt;p&gt;Return the documentElement of the document, as a node name:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;var x = document.documentElement.nodeName;&lt;/code&gt;
+return:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In addition it returns HTML or XML or some kind of things. But, In the most it will return HTML.&lt;/p&gt;
+
+&lt;h3 id=&quot;innerhtml-property&quot;&gt;innerHTML Property&lt;/h3&gt;
+
+&lt;p&gt;Change HTML content of element with id&lt;/p&gt;
+
+&lt;h2 id=&quot;bombrowser-object-model&quot;&gt;BOM(Browser Object Model)&lt;/h2&gt;
+&lt;p&gt;It’s a Browser Object Model which is made for communicating between brower and JS.&lt;/p&gt;
+
+&lt;p&gt;BOM은 자바 스크립트와 브라우저가 통신할 수 있게 해줍니다. favorite이나 주소창 그런것들을 사용할 수 있게 해줍니다.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 01 Jan 2014 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2014/01/01/default.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2014/01/01/default.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Default</title>
+        <description>&lt;h1 id=&quot;window-object-and-bom&quot;&gt;Window object and BOM&lt;/h1&gt;
+
+&lt;h2 id=&quot;window&quot;&gt;Window&lt;/h2&gt;
+
+&lt;p&gt;Window object is that handling whole browser. Such as tabs, scroll, History etc… 
+Window object can touch browser. And also Window object have these features&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;It is global object, and parent of all objects&lt;/li&gt;
+  &lt;li&gt;So it can be skip, like window.onscroll() -&amp;gt; just onscroll()&lt;/li&gt;
+  &lt;li&gt;It hold every variable that you made&lt;/li&gt;
+  &lt;li&gt;Finally, it contains basic variable types, String, Boolean, Object, Number, Function, Array&lt;/li&gt;
+  &lt;li&gt;I’m not sure about this but I think that it’s first class citizen&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;윈도우 객체는 브라우저 전체를 다룹니다. 예를 들면 탭, 스크롤, 주소창 등등 브라우저 전부를 다룰 수 있는  객체라 할 수 있습니다. 그리고 또한 아래의 특징을 지닙니다.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;모든 객체의 조상이 되는 전역변수입니다.&lt;/li&gt;
+  &lt;li&gt;때문에 윈도우 객체는 생략될 수 있습니다. 다음과 같이 window.onscroll() -&amp;gt; onscroll() 처럼 간단히 쓸수 있습니다.&lt;/li&gt;
+  &lt;li&gt;사용자가 만든 모든 변수를 자신 안에 등록시킵니다.&lt;/li&gt;
+  &lt;li&gt;마지막으로 이것은 기본 자바스크립트의 자료형, String, Boolean, Object, Number, Function, Array을 포함합니다.&lt;/li&gt;
+  &lt;li&gt;이것은 확실한 것은 아닙니다만, 위의 특성과 함께 자기 자신을 반환할 수 있다면, window 객체는 1급 객체입니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;domdocument-object-model&quot;&gt;DOM(Document Object Model)&lt;/h2&gt;
+&lt;p&gt;Document object is handling website. Therefore Window object include Document object.
+It is programming interface of HTML and XML document. DOM provide some ways that programming language can be access document. It controlls content in &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt;, below is a part of DOM methods&lt;/p&gt;
+
+&lt;p&gt;Document는 웹사이트를 다루는 오브젝트로써 Window object일부로 생각하면 됩니다. DOM은 HTML과 XML document에 대한 프로그래밍 인터페이스이라고 할 수 있는데요. DOM은 프로그래밍 언어가 document에 접근하여 body내부의 내용을 조작할 수 있습니다.
+아래는 DOM의 메소드들 중 일부의 예시 입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;on-scroll-event&quot;&gt;on scroll Event&lt;/h3&gt;
+
+&lt;p&gt;Excute a JavaScript when a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; elements is being scrolled&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 요소가  스크롤 됬을때 자바스크립트를 실행한다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div onscroll=&quot;myFunction()&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;html-dom-getelementbyid&quot;&gt;HTML DOM getElementById()&lt;/h3&gt;
+&lt;p&gt;This method returns element objects which have specific id value&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;document.getElementById(&quot;demo&quot;);&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And we can add attribute by using .&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function myFunction() {
+  var x = document.getElementById(&quot;demo&quot;);
+  x.style.color = &quot;red&quot;;
+}
+  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;origin:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p id=&quot;demo&quot;&amp;gt;
+  Click the button to change the color of this paragraph.
+&amp;lt;/p&amp;gt;
+&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;result:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p id=&quot;demo&quot; style=&quot;color: red;&quot;&amp;gt;
+  Click the button to change the color of this paragraph.
+&amp;lt;/p&amp;gt;
+&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;nodename&quot;&gt;nodeName&lt;/h3&gt;
+
+&lt;p&gt;Get the node name of a elepents:&lt;/p&gt;
+
+&lt;p&gt;for example:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&amp;lt;p id=&quot;demo&quot;&amp;gt;&amp;lt;/p&amp;gt;
+
+&amp;lt;script&amp;gt;
+function myFunction() {
+  var x = document.documentElement.nodeName;
+  document.getElementById(&quot;demo&quot;).innerHTML = x;
+}
+&amp;lt;/script&amp;gt;s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;result:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;P&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;docuemntelement-property&quot;&gt;docuemntElement Property&lt;/h3&gt;
+
+&lt;p&gt;Return the documentElement of the document, as a node name:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;var x = document.documentElement.nodeName;&lt;/code&gt;
+return:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In addition it returns HTML or XML or some kind of things. But, In the most it will return HTML.&lt;/p&gt;
+
+&lt;h3 id=&quot;innerhtml-property&quot;&gt;innerHTML Property&lt;/h3&gt;
+
+&lt;p&gt;Change HTML content of element with id&lt;/p&gt;
+
+&lt;h2 id=&quot;bombrowser-object-model&quot;&gt;BOM(Browser Object Model)&lt;/h2&gt;
+&lt;p&gt;It’s a Browser Object Model which is made for communicating between brower and JS.&lt;/p&gt;
+
+&lt;p&gt;BOM은 자바 스크립트와 브라우저가 통신할 수 있게 해줍니다. favorite이나 주소창 그런것들을 사용할 수 있게 해줍니다.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 01 Jan 2013 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2013/01/01/default.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2013/01/01/default.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Default</title>
+        <description>&lt;h1 id=&quot;window-object-and-bom&quot;&gt;Window object and BOM&lt;/h1&gt;
+
+&lt;h2 id=&quot;window&quot;&gt;Window&lt;/h2&gt;
+
+&lt;p&gt;Window object is that handling whole browser. Such as tabs, scroll, History etc… 
+Window object can touch browser. And also Window object have these features&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;It is global object, and parent of all objects&lt;/li&gt;
+  &lt;li&gt;So it can be skip, like window.onscroll() -&amp;gt; just onscroll()&lt;/li&gt;
+  &lt;li&gt;It hold every variable that you made&lt;/li&gt;
+  &lt;li&gt;Finally, it contains basic variable types, String, Boolean, Object, Number, Function, Array&lt;/li&gt;
+  &lt;li&gt;I’m not sure about this but I think that it’s first class citizen&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;윈도우 객체는 브라우저 전체를 다룹니다. 예를 들면 탭, 스크롤, 주소창 등등 브라우저 전부를 다룰 수 있는  객체라 할 수 있습니다. 그리고 또한 아래의 특징을 지닙니다.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;모든 객체의 조상이 되는 전역변수입니다.&lt;/li&gt;
+  &lt;li&gt;때문에 윈도우 객체는 생략될 수 있습니다. 다음과 같이 window.onscroll() -&amp;gt; onscroll() 처럼 간단히 쓸수 있습니다.&lt;/li&gt;
+  &lt;li&gt;사용자가 만든 모든 변수를 자신 안에 등록시킵니다.&lt;/li&gt;
+  &lt;li&gt;마지막으로 이것은 기본 자바스크립트의 자료형, String, Boolean, Object, Number, Function, Array을 포함합니다.&lt;/li&gt;
+  &lt;li&gt;이것은 확실한 것은 아닙니다만, 위의 특성과 함께 자기 자신을 반환할 수 있다면, window 객체는 1급 객체입니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;domdocument-object-model&quot;&gt;DOM(Document Object Model)&lt;/h2&gt;
+&lt;p&gt;Document object is handling website. Therefore Window object include Document object.
+It is programming interface of HTML and XML document. DOM provide some ways that programming language can be access document. It controlls content in &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt;, below is a part of DOM methods&lt;/p&gt;
+
+&lt;p&gt;Document는 웹사이트를 다루는 오브젝트로써 Window object일부로 생각하면 됩니다. DOM은 HTML과 XML document에 대한 프로그래밍 인터페이스이라고 할 수 있는데요. DOM은 프로그래밍 언어가 document에 접근하여 body내부의 내용을 조작할 수 있습니다.
+아래는 DOM의 메소드들 중 일부의 예시 입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;on-scroll-event&quot;&gt;on scroll Event&lt;/h3&gt;
+
+&lt;p&gt;Excute a JavaScript when a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; elements is being scrolled&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 요소가  스크롤 됬을때 자바스크립트를 실행한다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div onscroll=&quot;myFunction()&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;html-dom-getelementbyid&quot;&gt;HTML DOM getElementById()&lt;/h3&gt;
+&lt;p&gt;This method returns element objects which have specific id value&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;document.getElementById(&quot;demo&quot;);&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And we can add attribute by using .&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function myFunction() {
+  var x = document.getElementById(&quot;demo&quot;);
+  x.style.color = &quot;red&quot;;
+}
+  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;origin:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p id=&quot;demo&quot;&amp;gt;
+  Click the button to change the color of this paragraph.
+&amp;lt;/p&amp;gt;
+&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;result:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p id=&quot;demo&quot; style=&quot;color: red;&quot;&amp;gt;
+  Click the button to change the color of this paragraph.
+&amp;lt;/p&amp;gt;
+&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;nodename&quot;&gt;nodeName&lt;/h3&gt;
+
+&lt;p&gt;Get the node name of a elepents:&lt;/p&gt;
+
+&lt;p&gt;for example:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&amp;lt;p id=&quot;demo&quot;&amp;gt;&amp;lt;/p&amp;gt;
+
+&amp;lt;script&amp;gt;
+function myFunction() {
+  var x = document.documentElement.nodeName;
+  document.getElementById(&quot;demo&quot;).innerHTML = x;
+}
+&amp;lt;/script&amp;gt;s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;result:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;P&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;docuemntelement-property&quot;&gt;docuemntElement Property&lt;/h3&gt;
+
+&lt;p&gt;Return the documentElement of the document, as a node name:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;var x = document.documentElement.nodeName;&lt;/code&gt;
+return:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In addition it returns HTML or XML or some kind of things. But, In the most it will return HTML.&lt;/p&gt;
+
+&lt;h3 id=&quot;innerhtml-property&quot;&gt;innerHTML Property&lt;/h3&gt;
+
+&lt;p&gt;Change HTML content of element with id&lt;/p&gt;
+
+&lt;h2 id=&quot;bombrowser-object-model&quot;&gt;BOM(Browser Object Model)&lt;/h2&gt;
+&lt;p&gt;It’s a Browser Object Model which is made for communicating between brower and JS.&lt;/p&gt;
+
+&lt;p&gt;BOM은 자바 스크립트와 브라우저가 통신할 수 있게 해줍니다. favorite이나 주소창 그런것들을 사용할 수 있게 해줍니다.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 01 Jan 2012 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2012/01/01/default.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2012/01/01/default.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Default</title>
+        <description>&lt;h1 id=&quot;window-object-and-bom&quot;&gt;Window object and BOM&lt;/h1&gt;
+
+&lt;h2 id=&quot;window&quot;&gt;Window&lt;/h2&gt;
+
+&lt;p&gt;Window object is that handling whole browser. Such as tabs, scroll, History etc… 
+Window object can touch browser. And also Window object have these features&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;It is global object, and parent of all objects&lt;/li&gt;
+  &lt;li&gt;So it can be skip, like window.onscroll() -&amp;gt; just onscroll()&lt;/li&gt;
+  &lt;li&gt;It hold every variable that you made&lt;/li&gt;
+  &lt;li&gt;Finally, it contains basic variable types, String, Boolean, Object, Number, Function, Array&lt;/li&gt;
+  &lt;li&gt;I’m not sure about this but I think that it’s first class citizen&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;윈도우 객체는 브라우저 전체를 다룹니다. 예를 들면 탭, 스크롤, 주소창 등등 브라우저 전부를 다룰 수 있는  객체라 할 수 있습니다. 그리고 또한 아래의 특징을 지닙니다.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;모든 객체의 조상이 되는 전역변수입니다.&lt;/li&gt;
+  &lt;li&gt;때문에 윈도우 객체는 생략될 수 있습니다. 다음과 같이 window.onscroll() -&amp;gt; onscroll() 처럼 간단히 쓸수 있습니다.&lt;/li&gt;
+  &lt;li&gt;사용자가 만든 모든 변수를 자신 안에 등록시킵니다.&lt;/li&gt;
+  &lt;li&gt;마지막으로 이것은 기본 자바스크립트의 자료형, String, Boolean, Object, Number, Function, Array을 포함합니다.&lt;/li&gt;
+  &lt;li&gt;이것은 확실한 것은 아닙니다만, 위의 특성과 함께 자기 자신을 반환할 수 있다면, window 객체는 1급 객체입니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;domdocument-object-model&quot;&gt;DOM(Document Object Model)&lt;/h2&gt;
+&lt;p&gt;Document object is handling website. Therefore Window object include Document object.
+It is programming interface of HTML and XML document. DOM provide some ways that programming language can be access document. It controlls content in &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt;, below is a part of DOM methods&lt;/p&gt;
+
+&lt;p&gt;Document는 웹사이트를 다루는 오브젝트로써 Window object일부로 생각하면 됩니다. DOM은 HTML과 XML document에 대한 프로그래밍 인터페이스이라고 할 수 있는데요. DOM은 프로그래밍 언어가 document에 접근하여 body내부의 내용을 조작할 수 있습니다.
+아래는 DOM의 메소드들 중 일부의 예시 입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;on-scroll-event&quot;&gt;on scroll Event&lt;/h3&gt;
+
+&lt;p&gt;Excute a JavaScript when a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; elements is being scrolled&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 요소가  스크롤 됬을때 자바스크립트를 실행한다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div onscroll=&quot;myFunction()&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;html-dom-getelementbyid&quot;&gt;HTML DOM getElementById()&lt;/h3&gt;
+&lt;p&gt;This method returns element objects which have specific id value&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;document.getElementById(&quot;demo&quot;);&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And we can add attribute by using .&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function myFunction() {
+  var x = document.getElementById(&quot;demo&quot;);
+  x.style.color = &quot;red&quot;;
+}
+  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;origin:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p id=&quot;demo&quot;&amp;gt;
+  Click the button to change the color of this paragraph.
+&amp;lt;/p&amp;gt;
+&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;result:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p id=&quot;demo&quot; style=&quot;color: red;&quot;&amp;gt;
+  Click the button to change the color of this paragraph.
+&amp;lt;/p&amp;gt;
+&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;nodename&quot;&gt;nodeName&lt;/h3&gt;
+
+&lt;p&gt;Get the node name of a elepents:&lt;/p&gt;
+
+&lt;p&gt;for example:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&amp;lt;p id=&quot;demo&quot;&amp;gt;&amp;lt;/p&amp;gt;
+
+&amp;lt;script&amp;gt;
+function myFunction() {
+  var x = document.documentElement.nodeName;
+  document.getElementById(&quot;demo&quot;).innerHTML = x;
+}
+&amp;lt;/script&amp;gt;s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;result:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;P&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;docuemntelement-property&quot;&gt;docuemntElement Property&lt;/h3&gt;
+
+&lt;p&gt;Return the documentElement of the document, as a node name:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;var x = document.documentElement.nodeName;&lt;/code&gt;
+return:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In addition it returns HTML or XML or some kind of things. But, In the most it will return HTML.&lt;/p&gt;
+
+&lt;h3 id=&quot;innerhtml-property&quot;&gt;innerHTML Property&lt;/h3&gt;
+
+&lt;p&gt;Change HTML content of element with id&lt;/p&gt;
+
+&lt;h2 id=&quot;bombrowser-object-model&quot;&gt;BOM(Browser Object Model)&lt;/h2&gt;
+&lt;p&gt;It’s a Browser Object Model which is made for communicating between brower and JS.&lt;/p&gt;
+
+&lt;p&gt;BOM은 자바 스크립트와 브라우저가 통신할 수 있게 해줍니다. favorite이나 주소창 그런것들을 사용할 수 있게 해줍니다.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 01 Jan 2011 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2011/01/01/default.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2011/01/01/default.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Default</title>
+        <description>&lt;h1 id=&quot;window-object-and-bom&quot;&gt;Window object and BOM&lt;/h1&gt;
+
+&lt;h2 id=&quot;window&quot;&gt;Window&lt;/h2&gt;
+
+&lt;p&gt;Window object is that handling whole browser. Such as tabs, scroll, History etc… 
+Window object can touch browser. And also Window object have these features&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;It is global object, and parent of all objects&lt;/li&gt;
+  &lt;li&gt;So it can be skip, like window.onscroll() -&amp;gt; just onscroll()&lt;/li&gt;
+  &lt;li&gt;It hold every variable that you made&lt;/li&gt;
+  &lt;li&gt;Finally, it contains basic variable types, String, Boolean, Object, Number, Function, Array&lt;/li&gt;
+  &lt;li&gt;I’m not sure about this but I think that it’s first class citizen&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;윈도우 객체는 브라우저 전체를 다룹니다. 예를 들면 탭, 스크롤, 주소창 등등 브라우저 전부를 다룰 수 있는  객체라 할 수 있습니다. 그리고 또한 아래의 특징을 지닙니다.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;모든 객체의 조상이 되는 전역변수입니다.&lt;/li&gt;
+  &lt;li&gt;때문에 윈도우 객체는 생략될 수 있습니다. 다음과 같이 window.onscroll() -&amp;gt; onscroll() 처럼 간단히 쓸수 있습니다.&lt;/li&gt;
+  &lt;li&gt;사용자가 만든 모든 변수를 자신 안에 등록시킵니다.&lt;/li&gt;
+  &lt;li&gt;마지막으로 이것은 기본 자바스크립트의 자료형, String, Boolean, Object, Number, Function, Array을 포함합니다.&lt;/li&gt;
+  &lt;li&gt;이것은 확실한 것은 아닙니다만, 위의 특성과 함께 자기 자신을 반환할 수 있다면, window 객체는 1급 객체입니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;domdocument-object-model&quot;&gt;DOM(Document Object Model)&lt;/h2&gt;
+&lt;p&gt;Document object is handling website. Therefore Window object include Document object.
+It is programming interface of HTML and XML document. DOM provide some ways that programming language can be access document. It controlls content in &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt;, below is a part of DOM methods&lt;/p&gt;
+
+&lt;p&gt;Document는 웹사이트를 다루는 오브젝트로써 Window object일부로 생각하면 됩니다. DOM은 HTML과 XML document에 대한 프로그래밍 인터페이스이라고 할 수 있는데요. DOM은 프로그래밍 언어가 document에 접근하여 body내부의 내용을 조작할 수 있습니다.
+아래는 DOM의 메소드들 중 일부의 예시 입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;on-scroll-event&quot;&gt;on scroll Event&lt;/h3&gt;
+
+&lt;p&gt;Excute a JavaScript when a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; elements is being scrolled&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 요소가  스크롤 됬을때 자바스크립트를 실행한다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div onscroll=&quot;myFunction()&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;html-dom-getelementbyid&quot;&gt;HTML DOM getElementById()&lt;/h3&gt;
+&lt;p&gt;This method returns element objects which have specific id value&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;document.getElementById(&quot;demo&quot;);&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And we can add attribute by using .&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function myFunction() {
+  var x = document.getElementById(&quot;demo&quot;);
+  x.style.color = &quot;red&quot;;
+}
+  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;origin:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p id=&quot;demo&quot;&amp;gt;
+  Click the button to change the color of this paragraph.
+&amp;lt;/p&amp;gt;
+&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;result:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;p id=&quot;demo&quot; style=&quot;color: red;&quot;&amp;gt;
+  Click the button to change the color of this paragraph.
+&amp;lt;/p&amp;gt;
+&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;nodename&quot;&gt;nodeName&lt;/h3&gt;
+
+&lt;p&gt;Get the node name of a elepents:&lt;/p&gt;
+
+&lt;p&gt;for example:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;button onclick=&quot;myFunction()&quot;&amp;gt;Try it&amp;lt;/button&amp;gt;
+
+&amp;lt;p id=&quot;demo&quot;&amp;gt;&amp;lt;/p&amp;gt;
+
+&amp;lt;script&amp;gt;
+function myFunction() {
+  var x = document.documentElement.nodeName;
+  document.getElementById(&quot;demo&quot;).innerHTML = x;
+}
+&amp;lt;/script&amp;gt;s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;result:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;P&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;docuemntelement-property&quot;&gt;docuemntElement Property&lt;/h3&gt;
+
+&lt;p&gt;Return the documentElement of the document, as a node name:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;var x = document.documentElement.nodeName;&lt;/code&gt;
+return:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In addition it returns HTML or XML or some kind of things. But, In the most it will return HTML.&lt;/p&gt;
+
+&lt;h3 id=&quot;innerhtml-property&quot;&gt;innerHTML Property&lt;/h3&gt;
+
+&lt;p&gt;Change HTML content of element with id&lt;/p&gt;
+
+&lt;h2 id=&quot;bombrowser-object-model&quot;&gt;BOM(Browser Object Model)&lt;/h2&gt;
+&lt;p&gt;It’s a Browser Object Model which is made for communicating between brower and JS.&lt;/p&gt;
+
+&lt;p&gt;BOM은 자바 스크립트와 브라우저가 통신할 수 있게 해줍니다. favorite이나 주소창 그런것들을 사용할 수 있게 해줍니다.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 01 Jan 2010 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2010/01/01/default.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2010/01/01/default.html</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

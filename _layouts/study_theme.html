@@ -1,0 +1,67 @@
+---
+layout: default
+---
+
+{% assign subtitle = "" | split: "" %}
+{% assign programming = site.programming | where:"field", page.subjects |sort: date %}
+{% for post in programming %}
+  {% assign tsubtitle= post.middle-title | split: "," %}
+  {% assign subtitle= subtitle | concat: tsubtitle %}
+{% endfor %}
+
+{% assign subtitle= subtitle | sort %}
+{% assign result= subtitle | uniq %}
+{% assign size= 0 %}
+{% assign t=0 %}
+
+<h1>{{ page.title }}</h1>
+
+{% for temp in result %}
+  <h2>{{ temp }}</h2>
+  <ul class="post-list">
+    {% assign subpost = programming | where:"middle-title", temp |sort: date %} 
+    {% for temp in subpost %}
+    <a href="{{ temp.url }}" class="">
+      <li class="title">
+        {{ temp.small-title }} 
+      </li>
+      <li class="date">
+          <time
+          datetime="{{ page.date | date_to_xmlschema }}"
+          itemprop="datePublished"
+          >
+             {{ temp.date | date: "%b %-d, %Y" }}
+          </time>
+      </li>
+    </a>
+    {% endfor %}
+  </ul>
+{% endfor %}
+
+
+<h2>All posts</h2>
+{% assign programming = site.programming | where:"field", page.subjects |sort: date %}
+{% for temp in programming %}
+<ul class="post-list">
+  <a href="{{ temp.url }}" class="">
+    <li class="title">
+      {{ temp.small-title }} 
+    </li>
+    <li class="date">
+        <time
+        datetime="{{ page.date | date_to_xmlschema }}"
+        itemprop="datePublished"
+        >
+           {{ temp.date | date: "%b %-d, %Y" }}
+        </time>
+    </li>
+  </a>
+</ul>
+{% endfor %}
+
+
+<div class="post-body">
+
+{{ content }}
+
+</div>

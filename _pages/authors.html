@@ -1,0 +1,47 @@
+---
+layout: default
+permalink: /authors/
+
+authors:
+  - name: "류현석(ryu,hyun-seok)"
+    image_url: /images/authors_image/ryuhyunseok.jpg
+    explantion: 안녕하세요 장고 비공식 번역사이트를 제작한 류현석 입니다. 아래의 김선규님과 같이 페이지를 운영하고 있습니다.
+    site_url_exist: "true"
+    site_url: omnyx2.github.io
+  - name: "김선규(ryu,hyun-seok)"
+    image_url: /images/authors_image/ryuhyunseok.jpg
+    explantion: 안녕하세요.
+    site_url_exist: "true"
+    site_url: seonkyuKim.github.io
+---
+
+<ul>
+  {% for author in page.authors %}
+  <li>
+    <div class="author-box">
+      <img src="{{ author.image_url }}" alt="{{ author.name }}"/>
+      <dl class="author-class">
+        <dt class="author-name">
+          <h4>
+           {{ author.name }}
+          </h4>
+        </dt>
+        {% if author.site_url_exist %}
+        <dt class="author-link">
+          <a>
+              {{ author.site_url }}
+          </a>
+        </dt>
+        {% endif %}
+        <dt class="author-exp">
+          <h5>
+          {{ author.explantion }}
+          </h5>
+        </dt>
+      </dl>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+
+	

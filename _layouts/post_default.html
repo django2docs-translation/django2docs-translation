@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+    {% include masterheader.html%}
+    {% include header.html %}
+    <div class="page-content">
+      <div class="post-content-outer">
+        {{ content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+    <script id="dsq-count-scr" src="//{{ site.disqus }}.disqus.com/count.js" async></script>
+  </body>
+
+</html>

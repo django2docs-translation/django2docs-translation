@@ -1,0 +1,37 @@
+li{
+    list-style: none;
+}
+.author-box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    img{
+        width: 80px;
+        height: 80px;
+        margin-right: 30px;
+        border-radius: 50%;
+    }
+
+    dl{
+        .author-name{
+            margin-top: 5px;
+            h4{
+                margin-bottom: 0px;
+            }
+
+        }
+
+        .author-link{
+            margin-bottom: 3px;
+
+        }
+
+        .author-exp{
+            h5{
+                margin-bottom: 0px;
+            }
+
+        }
+    }
+}

@@ -1,0 +1,115 @@
+---
+layout: landing_post_default
+---
+
+<div class="sidebar-toc">
+  {% if true %}
+  <!-- you can change true to page.toc -->
+  <button onclick="OpenSidebar()" id="OpenSidebarButton">Open</button>
+  <aside
+    class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}"
+    style="display: block"
+    id="sidebar__right"
+  >
+    <nav class="toc">
+      <header>
+        <h4 class="nav__title">
+          <i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"> </i>
+          table of content
+        </h4>
+      </header>
+      {% include toc.html sanitize=true html=content h_min=1 h_max=6
+      class="toc__menu"%}
+    </nav>
+  </aside>
+  {% endif %}
+</div>
+<div class="post-article" id="inner">
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">{{ page.small-title }}</h1>
+      <p class="post-meta">
+        <time
+          datetime="{{ page.date | date_to_xmlschema }}"
+          itemprop="datePublished"
+          >{{ page.date | date: "%b %-d, %Y" }}</time
+        >{% if page.author %} •
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person"
+          ><span itemprop="name">{{ page.author }}</span></span
+        >{% endif %}
+      </p>
+    </header>
+
+    <div class="post-content" itemprop="articleBody">
+      {{ content }}
+      {% include disqus.html %} {% if true %}
+      <!--page.comments-->
+      •
+      <a href="https://omnyx2.github.io{{ page.url }}#disqus_thread">
+        0 Comments
+      </a>
+      {% endif %}
+    </div>
+  </article>
+</div>
+<div class="sidebar-relate-posts">
+  {% assign result= page.relate %}
+  <nav class="sidebar_left">
+    <ul class="toc__menu">
+      {% for temps in result %}
+      <h2>{{ temps }}</h2>
+      {% assign subpost = site.programming | where:"relate", temps %} 
+      {% for temp in subpost %}
+      <li>
+        <a href="{{ temp.url }}">{{ temp.small-title }} </a>
+      </li>
+      {% endfor %} {% endfor %}
+    </ul>
+  </nav>
+</div>
+<script>
+
+  
+    function screenchange(y) {
+      var sidebar = document.getElementById("sidebar__right");
+      if (y.matches) {
+        // If media query matches
+        sidebar.style.display = "none";
+      } else {
+        sidebar.style.display = "block";
+      }
+    }
+
+    window.onload = function() {
+      var y = window.matchMedia("(max-width: 60em)");
+      screenchange(y); // Call listener function at run time
+      y.addListener(screenchange); // Attach listener function on state changes
+    }
+
+    function OpenSidebar() {
+      var sidebar = document.getElementById("sidebar__right");
+      if (sidebar.style.display === "none") {
+        sidebar.style.display = "block";
+      } else {
+        sidebar.style.display = "none";
+      }
+    }
+
+    window.onscroll = function() {becomingsticky2()};
+
+        var sidebarright = document.getElementById("sidebar__right");
+        var fixed__right = sidebarright.offsetTop;
+
+        function becomingsticky2() {
+
+          if (window.pageYOffset >= fixed__right) {
+            sidebarright.classList.add("fixed");
+          }
+          else {
+            sidebarright.classList.remove("fixed");
+          }
+        }
+
+
+
+  </script>
