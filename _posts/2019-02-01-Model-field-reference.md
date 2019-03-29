@@ -1,18 +1,21 @@
 ---
 big-title: "The model layer"
-middle-title: "Model"
+middle-title: "Models"
 small-title: "Field types"
-author: 김선규(Kim,seon-kyu)
+author: 
+  - 김선규(Kim,seon-kyu)
 field:
-  - QuerySets
+  - Models
 relate:
-  - QuerySets
+  - Models
 toc: true
 toc-head-level-choice: false
 #do this if head level choice is true
 # toc-head-max:
 # toc-head-min:
 ---
+
+# Model field referenceh
 
 > 원본 링크: [https://docs.djangoproject.com/en/2.1/ref/models/fields/](https://docs.djangoproject.com/en/2.1/ref/models/fields/)
 
