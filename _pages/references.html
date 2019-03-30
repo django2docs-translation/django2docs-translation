@@ -6,25 +6,31 @@ permalink: /documents/
 <h1>References table</h1>
 
 {% assign big_subject = "" | split: "" %}
-{% assign middle_subject = "" | split: "" %}
+
 
 {% for post in site.posts %}
   {% assign big_subject= big_subject | push: post.big-title %}
-  {% assign middle_subject= middle_subject | push: post.middle-title %}
 {% endfor %}
 
 {% assign big_subject= big_subject | sort %}
 {% assign big_result= big_subject | uniq %}
 
+{% for big_title_category in big_result %}
+{% assign middle_subject = "" | split: "" %}
+<h2>{{ big_title_category }}</h2>
+
+{% for post in site.posts %}
+  {% if post.big-title == big_title_category %}
+    {% assign middle_subject= middle_subject | push: post.middle-title %}
+  {% endif %}
+{% endfor %}
+
 {% assign middle_subject= middle_subject | sort %}
 {% assign middle_result= middle_subject | uniq %}
 
-{% for big_title_category in big_result %}
-<h2>{{ big_title_category }}</h2>
-
 <ul class="post-list">
   <li class="post-list">
-
+  
   {% for middle_title_category in middle_result %}
   <h3>{{ middle_title_category }}: </h2>
   
