@@ -1,1 +1,1 @@
-# omnyx2.github.io
+# django2docs-translation
