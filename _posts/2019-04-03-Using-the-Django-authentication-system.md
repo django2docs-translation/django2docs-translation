@@ -707,7 +707,7 @@ Attributes:
 또한, redirect_field_name을 사용하여 login한 이후에 redirect할 URL을 포함하고 있는 GET field의 이름을 지정해줄 수 있습니다. 기본적으로 이 field는 next라 불립니다.
 
 다음은 시작으로 사용할 수 있는 샘플 registration/login.html template입니다. 이는 content block을 정해준 base.html template가 있다고 가정합니다:
-
+    {% raw %}
     {% extends "base.html" %}
     
     {% block content %}
@@ -746,6 +746,7 @@ Attributes:
     <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
     
     {% endblock %}
+    {% endraw %}
 
 만약 customized authentication(Customizing Authentication을 보십시오)를 갖고 있다면, authentication_form attribute를 설정함으로서 custom authentication을 사용할 수 있습니다. 이 form은 그것의 __init__() method에 request keyword argument를 받아들여야 하고 authenticated user object를 반환하는 get_user() method를 제공해야 합니다.
 
@@ -845,9 +846,10 @@ Email template context:
 - token: 재설정 링크가 유효한지 확인해주는 토큰입니다.
 
 샘플 registration/password_reset_email.html(email body template)입니다.
-
+    {% raw %}
     Someone asked for password reset for email {{ email }}. Follow the link below:
     {{ protocol}}://{{ domain }}{% url 'password_reset_confirm' uidb64=uid token=token %}
+    {% endraw %}
 
 같은 template context가 subject template에도 사용됩니다. 제목(Subject)은 반드시 한 줄의 일반 텍스트 문자열이어야 합니다.(single line plain text string)
 
